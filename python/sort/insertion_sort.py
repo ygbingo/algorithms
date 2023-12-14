@@ -1,5 +1,7 @@
 """
 插入排序
+Worst: O(n2)
+Average: O(n2)
 """
 
  

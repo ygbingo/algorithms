@@ -1,5 +1,7 @@
 """
 归并排序
+Worst: O(nlgn)
+Average: O(nlgn)
 """
 
 
