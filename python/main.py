@@ -1,6 +1,7 @@
 # from sort.insertion_sort import sort
 # from sort.merge_sort import sort
-from sort.bubble_sort import sort
+# from sort.bubble_sort import sort
+from sort.quick_sort import sort
 # from sort.heap_sort import sort
 from find_maximum_subarray import find_maximum_subarray
 
