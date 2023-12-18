@@ -102,7 +102,7 @@ class Tree:
             elif not root.right:
                 self.transplant(root, root.left)
             else:
-                node = minimum(root.right)
+                node = self.minimum(root.right)
                 if node.parent != root:
                     self.transplant(node, node.right)
                     node.right = root.right
