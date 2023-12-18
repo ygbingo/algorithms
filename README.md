@@ -68,3 +68,8 @@ Recovery &lt;Introduction to Algorithms> by one month
     - 计算几何学
     - NP完全性
     - 近似算法
+
+
+# 参考目录
+1. 《算法导论》
+2. [oi-wiki](https://oi-wiki.org)

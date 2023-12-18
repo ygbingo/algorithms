@@ -1,15 +1,7 @@
 """
 树
 """
-
-
-class Node:
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
-        self.parent = None
-
+from node import Node
 
 class Tree:
     def __init__(self, sequence: list):
@@ -56,20 +48,22 @@ class Tree:
             parent = parent.parent
         return parent
 
-    def maximum(self):
+    def maximum(self, node=None):
         """
         找到最大的节点
         """
-        node = self.root
+        if not node:
+            node = self.root
         while node.right:
             node = node.right
         return node
 
-    def minimum(self):
+    def minimum(self, node=None):
         """
         找到最小的节点
         """
-        node = self.root
+        if not node:
+            node = self.root
         while node.left:
             node = node.left
         return node
