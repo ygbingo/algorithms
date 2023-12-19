@@ -27,6 +27,9 @@ def print_lcs(b, X, i, j):
 def lcs_length(X, Y):
     """
     返回X和Y的LCS的长度
+    Returns:
+        c: c[i][j] 保存Xi和Yj的LCS长度
+        b: b[i][j]指向对应计算c[i][j]时所选择的子问题的最优解
     """
     m = len(X)
     n = len(Y)
