@@ -1,5 +1,5 @@
 # algorithms
-Recovery &lt;Introduction to Algorithms> by one month
+《算法导论》Python实现，部分结合知识点的leetcode习题
 
 # 需要学习的内容
 - 基础知识

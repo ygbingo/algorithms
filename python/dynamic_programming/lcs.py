@@ -60,13 +60,3 @@ def stanford_lcs_length(X, Y):
                 D[i][j] = D[i-1][j-1] + 1
             else:
                 D[i][j] = max(D[i-1][j], D[i][j-1])
-
-X = "ABCBDAB"
-Y = "BDCABA"
-(c, b) = lcs_length(X, Y) 
-print_lcs(b, X, len(X), len(Y))
-print(X)
-print(Y)
-print("".join(RES_LCS))
-
-stanford_lcs(X, Y)

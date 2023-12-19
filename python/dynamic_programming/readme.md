@@ -8,3 +8,4 @@
 
 - cut_rod: 钢条切割问题
 - lcs: 最长公共子串
+- optimal_bst: 最优二叉搜索树

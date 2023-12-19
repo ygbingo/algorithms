@@ -7,7 +7,16 @@ from find_maximum_subarray import find_maximum_subarray
 from data_structure.tree import Tree
 from data_structure.node import Node as TreeNode 
 from dynamic_programming.cut_rod import memoized_cut_rod, bottom_up_cut_rod
+from dynamic_programming.lcs import lcs_length, print_lcs, RES_LCS
 
+
+print("\n------- 最长公共子串 --------")
+X = "ABCBDAB"
+Y = "BDCABA"
+(c, b) = lcs_length(X, Y) 
+print_lcs(b, X, len(X), len(Y))
+print(f"字符串\"{X}\"和字符串\"{Y}\"的最长公共子串为:")
+print("".join(RES_LCS))
 
 print("\n------- 动态规划：钢条切割问题 -------")
 n = 5
