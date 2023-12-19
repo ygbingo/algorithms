@@ -5,10 +5,23 @@ from sort.quick_sort import sort
 # from sort.heap_sort import sort
 from find_maximum_subarray import find_maximum_subarray
 from data_structure.tree import Tree
-from data_structure.tree import Node as TreeNode 
+from data_structure.node import Node as TreeNode 
+from dynamic_programming.cut_rod import memoized_cut_rod, bottom_up_cut_rod
 
 
-print("-------- 二叉搜索树 ---------")
+print("\n------- 动态规划：钢条切割问题 -------")
+n = 5
+p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+print("钢条价格表：", p)
+r, s = bottom_up_cut_rod(p, n)
+print(f"切割长度为{n}, 最大收益为{r[-1]}")
+lst = []
+while n > 0:
+    lst.append(s[n])
+    n = n-s[n]
+print(f"切割长度为: {lst}")
+
+print("\n-------- 二叉搜索树 ---------")
 sequence = [6, 5, 2, 5, 8, 7]
 tree = Tree(sequence)
 node = tree.root
@@ -23,7 +36,7 @@ node = tree.root
 tree.behind_tree_walk(node)
 print("后序遍历: ", tree.tree_walk_lst)
 
-print("---------- 排序问题 ---------")
+print("\n---------- 排序问题 ---------")
 A = [2, 3, 4, 1, 6, 8, 9, 0]
 print("before sort: ")
 print(A)
@@ -36,7 +49,7 @@ print("after reverse sort: ")
 sort(A, reverse=True)
 print(A)
 
-print("--------- 最大连续子数组问题 ----------")
+print("\n--------- 最大连续子数组问题 ----------")
 
 A = [100, 113, 110, 85, 105, 102, 86, 63, 81, 101, 94, 106, 101, 79, 94, 90, 97]
 B = A.copy()

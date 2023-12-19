@@ -1,7 +1,7 @@
 """
 树
 """
-from node import Node
+from data_structure.node import Node
 
 class Tree:
     def __init__(self, sequence: list):
