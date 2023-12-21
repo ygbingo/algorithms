@@ -1,6 +1,8 @@
 # algorithms
 《算法导论》Python实现，部分结合知识点的leetcode习题
 
+![](https://github.com/ygbingo/algorithms/edit/main/img1.png)
+
 # 需要学习的内容
 - 基础知识
     - 插入排序
