@@ -1,5 +1,5 @@
 """
-B树
+B树: 插入，查找，删除
 """
 
 
@@ -82,6 +82,43 @@ class BTree:
         self.t = t
         self.root = None
         self.MAX_VAL = 2 * t - 1
+
+    def delete(self, node: BTreeNode, k):
+        """
+        删除k：
+        1. 在叶节点中，直接删除
+        2. 在内部节点：
+            a. 如果前子节点n == t，则使用前继代替k
+            b. 如果后子节点n == t, 则使用后继代替k
+            c. 将k和后子节点合并到前子节点中，并删除前子节点中的k
+        3. 找到可能存在的节点，递归
+        """
+        for i in range(node.n):
+            if node.keys[i] == k and node.leaf:
+                node.keys.pop(i)
+                node.n -= 1
+                break
+            elif node.keys[i] == k:
+                if node.childs[i].n >= self.t:
+                    new_val = node.childs[i].keys[-1]
+                    self.delete(node.childs[i], node.childs[i].keys[-1])
+                    node.keys[i] = new_val
+                elif node.childs[i+1].n >= self.t:
+                    new_val = node.childs[i+1].keys[0]
+                    self.delete(node.childs[i+1], node.childs[i+1].keys[0])
+                    node.keys[i] = new_val
+                else:
+                    node.childs[i].append(node.keys.pop(i))
+                    node.childs[i].extend(node.childs.pop(i+1))
+                    self.delete(node.childs[i], k)
+                    node.n -= 1
+                break
+            elif node.keys[i] > k:
+                self.delete(node.childs[i], k)
+                break
+        if not node.leaf:
+            self.delete(node.childs[i+1], k)
+        return None
 
     def traverse(self):
         if self.root:
