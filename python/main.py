@@ -5,9 +5,20 @@ from sort.quick_sort import sort
 # from sort.heap_sort import sort
 from find_maximum_subarray import find_maximum_subarray
 from data_structure.tree import Tree
-from data_structure.node import Node as TreeNode 
+from data_structure.node import Node as TreeNode
+from data_structure.graph import Graph 
 from dynamic_programming.cut_rod import memoized_cut_rod, bottom_up_cut_rod
 from dynamic_programming.lcs import lcs_length, print_lcs, RES_LCS
+
+
+print("\n------------ 图 -----------")
+edge_lst = [(2, 0), (0, 2), (1, 2), (2, 3), (3, 4), (4, 6), (4, 5), (0, 1), (3, 3), (1, 3)]
+print("连通点集合: ", edge_lst)
+g = Graph()
+for edge0, edge1 in edge_lst:
+    g.add_edge(edge0, edge1)
+print("从2开始广度优先搜索结果: ", g.bfs(2))
+print("从2开始深度优先搜索结果: ", g.dfs(2))
 
 
 print("\n------- 最长公共子串 --------")

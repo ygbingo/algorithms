@@ -35,6 +35,7 @@ class Graph:
         广度优先搜索
         """
         visitied = [False] * (max(self.graph) + 1)
+        print(visitied)
         queue = [start]
         visitied[start] = True
         result = []
@@ -42,9 +43,9 @@ class Graph:
         while queue:
             v = queue.pop(0)
             result.append(v)
-            print(v)
-            print(self.graph[v])
             for _v in self.graph[v]:
+                if _v >= len(visitied):
+                    visitied.extend([False] * (_v - len(visitied) + 1))
                 if not visitied[_v]:
                     visitied[_v] = True
                     queue.append(_v)
