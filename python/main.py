@@ -3,7 +3,7 @@
 # from sort.bubble_sort import sort
 from sort.quick_sort import sort
 # from sort.heap_sort import sort
-from python.problems.find_maximum_subarray import find_maximum_subarray
+from problems.find_maximum_subarray import find_maximum_subarray
 from data_structure.tree import Tree
 from data_structure.node import Node as TreeNode
 from data_structure.graph import Graph 
