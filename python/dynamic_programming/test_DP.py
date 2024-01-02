@@ -13,3 +13,13 @@ def test_cut_rod():
 def test_lvp():
     s = "(()))())("
     assert longest_valid_parentheses(s) == 4
+
+
+from getMaxRepetitions_466 import get_max_repetitions
+
+
+def test_466():
+    s1, n1, s2, n2 = "acb", 4, "ab", 2
+    assert get_max_repetitions(s1, n1, s2, n2) == 2
+    s1, n1, s2, n2 = "acb", 1, "acb", 1
+    assert get_max_repetitions(s1, n1, s2, n2) == 1
