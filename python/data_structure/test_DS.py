@@ -1,6 +1,13 @@
 from b_tree import BTree
 from graph import Graph
+from node import ListNode
+from del_node_2487 import remove_nodes, build_nodes, show_nodes
 
+
+def test_2487():
+    heads = [5,2,13,3,8]
+    head = build_nodes(heads)
+    assert show_nodes(remove_nodes(head)) == [13, 8]
 
 def test_BFS():
     g = Graph()
